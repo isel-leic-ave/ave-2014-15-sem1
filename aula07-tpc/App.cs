@@ -8,7 +8,7 @@ class Employee
 {
     public override String ToString()
     {
-        return "Employee";
+        return "I am Employee";
     }
 
 }
@@ -18,7 +18,7 @@ class Operator : Employee
 
     public override String ToString()
     {
-        return "Operator";
+        return "I am Operator";
     }
 
 }
@@ -28,7 +28,7 @@ class Manager : Employee
 
     public new virtual String ToString()
     {
-        return "Manager";
+        return "I am Manager";
     }
 
 }
@@ -38,7 +38,7 @@ class Boss : Manager
 
     public override String ToString()
     {
-        return "Boss";
+        return "I am Boss";
     }
 
 }
@@ -48,7 +48,7 @@ class Owner : Boss
 
     public override String ToString()
     {
-        return "Owner";
+        return "I am Owner";
     }
 
 }
@@ -62,14 +62,11 @@ class Program
     static void Main()
     {
         Employee e = new Owner();
-        Employee opr = new Operator();
-        
-        Console.WriteLine(e.ToString());
-        Console.WriteLine(((Manager)e).ToString());
-        Console.WriteLine(((Boss)e).ToString());
-        Console.WriteLine(((Owner)e).ToString());
 
-        Console.WriteLine(opr);
-        Console.WriteLine((Operator)opr);
+        // Console.WriteLine(((Object)e).ToString());   // I am Employee
+        Console.WriteLine(e.ToString());             // I am Employee
+        Console.WriteLine(((Manager)e).ToString());  // I am Owner
+        Console.WriteLine(((Boss)e).ToString());     // I am Owner
+        Console.WriteLine(((Owner)e).ToString());    // I am Owner
     }
 }
